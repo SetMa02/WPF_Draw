@@ -38,7 +38,7 @@ namespace WPF_MM_2
             mcolor.blue = 0;
            
 
-            //set slider's value here
+          
             penSizeSlider.Value = 1;
             
             
@@ -79,8 +79,12 @@ namespace WPF_MM_2
                 mcolor.blue = Convert.ToByte(value);
             }
 
+          
            
-            clr = Color.FromRgb(mcolor.red, mcolor.green, mcolor.blue);
+            clr = Color.FromRgb(mcolor.red, mcolor.green, mcolor.blue); 
+
+
+            currentColor.Background = new SolidColorBrush(Color.FromRgb(mcolor.red, mcolor.green, mcolor.blue));
           
             this.inkCanvas.DefaultDrawingAttributes.Color = clr;
         }
@@ -92,12 +96,17 @@ namespace WPF_MM_2
             FileStream fs = new FileStream(sigPath, FileMode.Create);
             inkCanvas.Strokes.Save(fs);
             fs.Close();
-                MessageBox.Show("Сохранено:" + sigPath.ToString());
+                MessageBox.Show("Сохранено: " + sigPath.ToString());
                 }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void btnDev_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Майнагашев Максим Александрович".ToString(), MessageBoxImage.Warning.ToString());
         }
     }
 }

@@ -10,6 +10,13 @@
         </Grid.RowDefinitions>
 
         <ToolBar HorizontalAlignment="Center" VerticalAlignment="Center" Background="BlanchedAlmond" Width="517" Height="50">
+            <Menu Background="BlanchedAlmond">
+            <MenuItem Header="Файл" Margin="10px">
+                <MenuItem Header="Сохранить" x:Name="Save" Click="btnSave_Click"></MenuItem>
+                <MenuItem Header="О разработчике" x:Name="btnDev" Click="btnDev_Click"></MenuItem>
+                <MenuItem Header="Выйти" x:Name="Exit" Click="Button_Click"></MenuItem>
+            </MenuItem>
+            </Menu>
             <Slider HorizontalAlignment="Center" VerticalAlignment="Center" ValueChanged="SizeSlider_ValueChanged" Name="penSizeSlider" Minimum="0" Maximum="10" Width="100" ></Slider>
             <Button Margin="5" BorderBrush="Black" x:Name="btnClear" Click="Button_Click">Очистить</Button>
             <Button Margin="5" Name="btnSave" Click="btnSave_Click" BorderBrush="Black">Сохранить </Button>
@@ -19,6 +26,7 @@
             <Slider x:Name="sld_RedColor" Background="Red" Minimum="0" Maximum="255" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="269" ValueChanged="sld_Color_ValueChanged"/>
             <Slider x:Name="sld_GreenColor" Background="Green" Minimum="0" Maximum="255" HorizontalAlignment="Left" VerticalAlignment="Top" Width="269" ValueChanged="sld_Color_ValueChanged"/>
             <Slider x:Name="sld_BlueColor" Background="Blue" Minimum="0" Maximum="255" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="269" ValueChanged="sld_Color_ValueChanged"/>
+            <TextBlock x:Name="currentColor" Margin="356,-55,98,0" Height="50"/>
         </StackPanel>
     </Grid>
 </Window>
